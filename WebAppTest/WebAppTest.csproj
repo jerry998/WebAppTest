@@ -1,0 +1,737 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FEE0751E-9134-4D4F-9E81-6205BF52A67F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebAppTest</RootNamespace>
+    <AssemblyName>WebAppTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.1.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.1.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.1.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.1.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.5.1\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.5.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.5.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.5.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.5.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.5.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BootstrapAceController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JavaScriptController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\northwind.mdf" />
+    <Content Include="App_Data\northwind_log.ldf">
+      <DependentUpon>northwind.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\Ace\avatars\avatar.png" />
+    <Content Include="Content\Ace\avatars\avatar1.png" />
+    <Content Include="Content\Ace\avatars\avatar2.png" />
+    <Content Include="Content\Ace\avatars\avatar3.png" />
+    <Content Include="Content\Ace\avatars\avatar4.png" />
+    <Content Include="Content\Ace\avatars\avatar5.png" />
+    <Content Include="Content\Ace\avatars\profile-pic.jpg" />
+    <Content Include="Content\Ace\avatars\user.jpg" />
+    <Content Include="Content\Ace\css\ace-fonts.css" />
+    <Content Include="Content\Ace\css\ace-ie.css" />
+    <Content Include="Content\Ace\css\ace-part2.css" />
+    <Content Include="Content\Ace\css\ace-rtl.css" />
+    <Content Include="Content\Ace\css\ace-skins.css" />
+    <Content Include="Content\Ace\css\ace.css" />
+    <Content Include="Content\Ace\css\ace.onpage-help.css" />
+    <Content Include="Content\Ace\css\bootstrap-datepicker3.css" />
+    <Content Include="Content\Ace\css\bootstrap-datetimepicker.css" />
+    <Content Include="Content\Ace\css\bootstrap-duallistbox.css" />
+    <Content Include="Content\Ace\css\bootstrap-editable.css" />
+    <Content Include="Content\Ace\css\bootstrap-multiselect.css" />
+    <Content Include="Content\Ace\css\bootstrap-timepicker.css" />
+    <Content Include="Content\Ace\css\bootstrap.css" />
+    <Content Include="Content\Ace\css\chosen-sprite%402x.png" />
+    <Content Include="Content\Ace\css\chosen-sprite.png" />
+    <Content Include="Content\Ace\css\chosen.css" />
+    <Content Include="Content\Ace\css\colorbox.css" />
+    <Content Include="Content\Ace\css\colorpicker.css" />
+    <Content Include="Content\Ace\css\daterangepicker.css" />
+    <Content Include="Content\Ace\css\dropzone.css" />
+    <Content Include="Content\Ace\css\font-awesome.css" />
+    <Content Include="Content\Ace\css\fullcalendar.css" />
+    <Content Include="Content\Ace\css\fullcalendar.print.css" />
+    <Content Include="Content\Ace\css\images\border.png" />
+    <Content Include="Content\Ace\css\images\border1.png" />
+    <Content Include="Content\Ace\css\images\border2.png" />
+    <Content Include="Content\Ace\css\images\controls.png" />
+    <Content Include="Content\Ace\css\images\ie6\borderBottomCenter.png" />
+    <Content Include="Content\Ace\css\images\ie6\borderBottomLeft.png" />
+    <Content Include="Content\Ace\css\images\ie6\borderBottomRight.png" />
+    <Content Include="Content\Ace\css\images\ie6\borderMiddleLeft.png" />
+    <Content Include="Content\Ace\css\images\ie6\borderMiddleRight.png" />
+    <Content Include="Content\Ace\css\images\ie6\borderTopCenter.png" />
+    <Content Include="Content\Ace\css\images\ie6\borderTopLeft.png" />
+    <Content Include="Content\Ace\css\images\ie6\borderTopRight.png" />
+    <Content Include="Content\Ace\css\images\loading.gif" />
+    <Content Include="Content\Ace\css\images\loading_background.png" />
+    <Content Include="Content\Ace\css\images\meteorshower.jpg" />
+    <Content Include="Content\Ace\css\images\meteorshower2.jpg" />
+    <Content Include="Content\Ace\css\images\overlay.png" />
+    <Content Include="Content\Ace\css\images\pattern.jpg" />
+    <Content Include="Content\Ace\css\images\pattern.png" />
+    <Content Include="Content\Ace\css\images\spritemap%402x.png" />
+    <Content Include="Content\Ace\css\images\spritemap.png" />
+    <Content Include="Content\Ace\css\img\alpha.png" />
+    <Content Include="Content\Ace\css\img\hue.png" />
+    <Content Include="Content\Ace\css\img\saturation.png" />
+    <Content Include="Content\Ace\css\jquery-ui.css" />
+    <Content Include="Content\Ace\css\jquery-ui.custom.css" />
+    <Content Include="Content\Ace\css\jquery.gritter.css" />
+    <Content Include="Content\Ace\css\pace.css" />
+    <Content Include="Content\Ace\css\prettify.css" />
+    <Content Include="Content\Ace\css\select2-spinner.gif" />
+    <Content Include="Content\Ace\css\select2.css" />
+    <Content Include="Content\Ace\css\select2.png" />
+    <Content Include="Content\Ace\css\select2x2.png" />
+    <Content Include="Content\Ace\css\ui.jqgrid.css" />
+    <Content Include="Content\Ace\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Ace\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\Ace\js\ace-elements.js" />
+    <Content Include="Scripts\Ace\js\ace-extra.js" />
+    <Content Include="Scripts\Ace\js\ace.js" />
+    <Content Include="Scripts\Ace\js\ace\ace.ajax-content.js" />
+    <Content Include="Scripts\Ace\js\ace\ace.auto-container.js" />
+    <Content Include="Scripts\Ace\js\ace\ace.auto-padding.js" />
+    <Content Include="Scripts\Ace\js\ace\ace.js" />
+    <Content Include="Scripts\Ace\js\ace\ace.onpage-help.js" />
+    <Content Include="Scripts\Ace\js\ace\ace.searchbox-autocomplete.js" />
+    <Content Include="Scripts\Ace\js\ace\ace.settings-rtl.js" />
+    <Content Include="Scripts\Ace\js\ace\ace.settings-skin.js" />
+    <Content Include="Scripts\Ace\js\ace\ace.settings.js" />
+    <Content Include="Scripts\Ace\js\ace\ace.sidebar-scroll-1.js" />
+    <Content Include="Scripts\Ace\js\ace\ace.sidebar-scroll-2.js" />
+    <Content Include="Scripts\Ace\js\ace\ace.sidebar.js" />
+    <Content Include="Scripts\Ace\js\ace\ace.submenu-hover.js" />
+    <Content Include="Scripts\Ace\js\ace\ace.touch-drag.js" />
+    <Content Include="Scripts\Ace\js\ace\ace.widget-box.js" />
+    <Content Include="Scripts\Ace\js\ace\ace.widget-on-reload.js" />
+    <Content Include="Scripts\Ace\js\ace\elements.aside.js" />
+    <Content Include="Scripts\Ace\js\ace\elements.colorpicker.js" />
+    <Content Include="Scripts\Ace\js\ace\elements.fileinput.js" />
+    <Content Include="Scripts\Ace\js\ace\elements.onpage-help.js" />
+    <Content Include="Scripts\Ace\js\ace\elements.scroller.js" />
+    <Content Include="Scripts\Ace\js\ace\elements.spinner.js" />
+    <Content Include="Scripts\Ace\js\ace\elements.treeview.js" />
+    <Content Include="Scripts\Ace\js\ace\elements.typeahead.js" />
+    <Content Include="Scripts\Ace\js\ace\elements.wizard.js" />
+    <Content Include="Scripts\Ace\js\ace\elements.wysiwyg.js" />
+    <Content Include="Scripts\Ace\js\additional-methods.js" />
+    <Content Include="Scripts\Ace\js\autosize.js" />
+    <Content Include="Scripts\Ace\js\bootbox.js" />
+    <Content Include="Scripts\Ace\js\bootstrap-colorpicker.js" />
+    <Content Include="Scripts\Ace\js\bootstrap-multiselect.js" />
+    <Content Include="Scripts\Ace\js\bootstrap-tag.js" />
+    <Content Include="Scripts\Ace\js\bootstrap-wysiwyg.js" />
+    <Content Include="Scripts\Ace\js\bootstrap.js" />
+    <Content Include="Scripts\Ace\js\chosen.jquery.js" />
+    <Content Include="Scripts\Ace\js\dataTables\extensions\buttons\buttons.colVis.js" />
+    <Content Include="Scripts\Ace\js\dataTables\extensions\buttons\buttons.flash.js" />
+    <Content Include="Scripts\Ace\js\dataTables\extensions\buttons\buttons.html5.js" />
+    <Content Include="Scripts\Ace\js\dataTables\extensions\buttons\buttons.print.js" />
+    <Content Include="Scripts\Ace\js\dataTables\extensions\buttons\dataTables.buttons.js" />
+    <Content Include="Scripts\Ace\js\dataTables\extensions\buttons\swf\flashExport.swf" />
+    <Content Include="Scripts\Ace\js\dataTables\extensions\select\dataTables.select.js" />
+    <Content Include="Scripts\Ace\js\dataTables\jquery.dataTables.bootstrap.js" />
+    <Content Include="Scripts\Ace\js\dataTables\jquery.dataTables.js" />
+    <Content Include="Scripts\Ace\js\date-time\bootstrap-datepicker.js" />
+    <Content Include="Scripts\Ace\js\date-time\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\Ace\js\date-time\bootstrap-timepicker.js" />
+    <Content Include="Scripts\Ace\js\date-time\daterangepicker.js" />
+    <Content Include="Scripts\Ace\js\date-time\moment.js" />
+    <Content Include="Scripts\Ace\js\dropzone.js" />
+    <Content Include="Scripts\Ace\js\excanvas.js" />
+    <Content Include="Scripts\Ace\js\flot\jquery.flot.js" />
+    <Content Include="Scripts\Ace\js\flot\jquery.flot.pie.js" />
+    <Content Include="Scripts\Ace\js\flot\jquery.flot.resize.js" />
+    <Content Include="Scripts\Ace\js\fuelux\fuelux.spinner.js" />
+    <Content Include="Scripts\Ace\js\fuelux\fuelux.tree.js" />
+    <Content Include="Scripts\Ace\js\fuelux\fuelux.wizard.js" />
+    <Content Include="Scripts\Ace\js\fullcalendar.js" />
+    <Content Include="Scripts\Ace\js\html5shiv-printshiv.js" />
+    <Content Include="Scripts\Ace\js\html5shiv.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-ar.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-bg.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-ca.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-cn.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-cs.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-de.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-dk.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-el.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-en.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-es.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-fa.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-fi.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-fr.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-gl.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-he.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-hr.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-hu.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-id.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-is.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-it.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-ja.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-kr.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-lt.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-me.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-nl.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-no.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-pl.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-pt-br.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-pt.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-ro.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-ru.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-sk.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-sr-latin.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-sr.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-sv.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-th.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-tr.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-tw.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-ua.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-uk.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\i18n\grid.locale-vi.js" />
+    <Content Include="Scripts\Ace\js\jqGrid\jquery.jqGrid.js" />
+    <Content Include="Scripts\Ace\js\jquery-ui.custom.js" />
+    <Content Include="Scripts\Ace\js\jquery-ui.js" />
+    <Content Include="Scripts\Ace\js\jquery.bootstrap-duallistbox.js" />
+    <Content Include="Scripts\Ace\js\jquery.colorbox.js" />
+    <Content Include="Scripts\Ace\js\jquery.easypiechart.js" />
+    <Content Include="Scripts\Ace\js\jquery.gritter.js" />
+    <Content Include="Scripts\Ace\js\jquery.hotkeys.js" />
+    <Content Include="Scripts\Ace\js\jquery.inputlimiter.1.3.1.js" />
+    <Content Include="Scripts\Ace\js\jquery.js" />
+    <Content Include="Scripts\Ace\js\jquery.knob.js" />
+    <Content Include="Scripts\Ace\js\jquery.maskedinput.js" />
+    <Content Include="Scripts\Ace\js\jquery.mobile.custom.js" />
+    <Content Include="Scripts\Ace\js\jquery.mousewheel.js" />
+    <Content Include="Scripts\Ace\js\jquery.nestable.js" />
+    <Content Include="Scripts\Ace\js\jquery.raty.js" />
+    <Content Include="Scripts\Ace\js\jquery.slimscroll.js" />
+    <Content Include="Scripts\Ace\js\jquery.sparkline.js" />
+    <Content Include="Scripts\Ace\js\jquery.ui.touch-punch.js" />
+    <Content Include="Scripts\Ace\js\jquery.validate.js" />
+    <Content Include="Scripts\Ace\js\jquery1x.js" />
+    <Content Include="Scripts\Ace\js\markdown\bootstrap-markdown.js" />
+    <Content Include="Scripts\Ace\js\markdown\markdown.js" />
+    <Content Include="Scripts\Ace\js\markdown\to-markdown.js" />
+    <Content Include="Scripts\Ace\js\pace.js" />
+    <Content Include="Scripts\Ace\js\prettify.js" />
+    <Content Include="Scripts\Ace\js\respond.js" />
+    <Content Include="Scripts\Ace\js\select2.js" />
+    <Content Include="Scripts\Ace\js\spin.js" />
+    <Content Include="Scripts\Ace\js\typeahead.jquery.js" />
+    <Content Include="Scripts\Ace\js\x-editable\ace-editable.js" />
+    <Content Include="Scripts\Ace\js\x-editable\bootstrap-editable.js" />
+    <Content Include="Scripts\Ace\js\sidebar-menu.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Ace\js\ace\readme" />
+    <Content Include="Scripts\Ace\js\ace\scripts.json" />
+    <Content Include="Content\Ace\css\less\ace-features.less" />
+    <Content Include="Content\Ace\css\less\ace-nav.less" />
+    <Content Include="Content\Ace\css\less\ace-responsive.less" />
+    <Content Include="Content\Ace\css\less\ace-rtl.less" />
+    <Content Include="Content\Ace\css\less\ace.less" />
+    <Content Include="Content\Ace\css\less\basic.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\alerts.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\badges.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\bootstrap.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\breadcrumbs.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\button-groups.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\buttons.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\carousel.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\close.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\code.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\component-animations.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\dropdowns.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\forms.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\glyphicons.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\grid.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\input-groups.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\jumbotron.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\labels.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\list-group.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\media.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\alerts.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\background-variant.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\border-radius.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\buttons.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\center-block.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\clearfix.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\forms.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\gradients.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\grid-framework.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\grid.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\hide-text.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\image.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\labels.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\list-group.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\nav-divider.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\nav-vertical-align.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\opacity.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\pagination.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\panels.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\progress-bar.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\reset-filter.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\reset-text.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\resize.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\responsive-visibility.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\size.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\tab-focus.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\table-row.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\text-emphasis.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\text-overflow.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\mixins\vendor-prefixes.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\modals.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\navbar.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\navs.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\normalize.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\pager.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\pagination.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\panels.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\popovers.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\print.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\progress-bars.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\responsive-embed.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\responsive-utilities.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\scaffolding.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\tables.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\theme.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\thumbnails.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\tooltip.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\type.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\utilities.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\variables.less" />
+    <Content Include="Content\Ace\css\less\bootstrap\wells.less" />
+    <Content Include="Content\Ace\css\less\breadcrumbs.less" />
+    <Content Include="Content\Ace\css\less\bs3-reset.less" />
+    <Content Include="Content\Ace\css\less\buttons.less" />
+    <Content Include="Content\Ace\css\less\dropdown.less" />
+    <Content Include="Content\Ace\css\less\dropdown\colorpicker.less" />
+    <Content Include="Content\Ace\css\less\dropdown\navbar-dropdown.less" />
+    <Content Include="Content\Ace\css\less\dropdown\navbar-tabbed-dropdown.less" />
+    <Content Include="Content\Ace\css\less\ext\bootstrap-tag.less" />
+    <Content Include="Content\Ace\css\less\fonts-rel.less" />
+    <Content Include="Content\Ace\css\less\fonts.less" />
+    <Content Include="Content\Ace\css\less\footer.less" />
+    <Content Include="Content\Ace\css\less\form.less" />
+    <Content Include="Content\Ace\css\less\form\checkbox.less" />
+    <Content Include="Content\Ace\css\less\form\file.less" />
+    <Content Include="Content\Ace\css\less\gallery.less" />
+    <Content Include="Content\Ace\css\less\general.less" />
+    <Content Include="Content\Ace\css\less\icon-animated.less" />
+    <Content Include="Content\Ace\css\less\infobox.less" />
+    <Content Include="Content\Ace\css\less\items.less" />
+    <Content Include="Content\Ace\css\less\label-badge.less" />
+    <Content Include="Content\Ace\css\less\mixins.less" />
+    <Content Include="Content\Ace\css\less\modal.less" />
+    <Content Include="Content\Ace\css\less\navbar\collapsible.less" />
+    <Content Include="Content\Ace\css\less\navbar\navbar-menu-form.less" />
+    <Content Include="Content\Ace\css\less\navbar\toggle-button.less" />
+    <Content Include="Content\Ace\css\less\navbar\user-buttons-move-down.less" />
+    <Content Include="Content\Ace\css\less\navbar\user-buttons.less" />
+    <Content Include="Content\Ace\css\less\navbar\user-dropdown-position.less" />
+    <Content Include="Content\Ace\css\less\navbar\user-menu.less" />
+    <Content Include="Content\Ace\css\less\onpage-help.less" />
+    <Content Include="Content\Ace\css\less\other.less" />
+    <Content Include="Content\Ace\css\less\page.error.less" />
+    <Content Include="Content\Ace\css\less\page.inbox.less" />
+    <Content Include="Content\Ace\css\less\page.invoice.less" />
+    <Content Include="Content\Ace\css\less\page.login.less" />
+    <Content Include="Content\Ace\css\less\page.pricing.less" />
+    <Content Include="Content\Ace\css\less\page.profile.less" />
+    <Content Include="Content\Ace\css\less\page.timeline.less" />
+    <Content Include="Content\Ace\css\less\print.less" />
+    <Content Include="Content\Ace\css\less\progressbar.less" />
+    <Content Include="Content\Ace\css\less\scroll.less" />
+    <Content Include="Content\Ace\css\less\searchbox.less" />
+    <Content Include="Content\Ace\css\less\sidebar.less" />
+    <Content Include="Content\Ace\css\less\sidebar\active.less" />
+    <Content Include="Content\Ace\css\less\sidebar\compact.less" />
+    <Content Include="Content\Ace\css\less\sidebar\ff_fix.less" />
+    <Content Include="Content\Ace\css\less\sidebar\highlight.less" />
+    <Content Include="Content\Ace\css\less\sidebar\horizontal.less" />
+    <Content Include="Content\Ace\css\less\sidebar\hover.less" />
+    <Content Include="Content\Ace\css\less\sidebar\min.less" />
+    <Content Include="Content\Ace\css\less\sidebar\multiple.less" />
+    <Content Include="Content\Ace\css\less\sidebar\old-toggle-button.less" />
+    <Content Include="Content\Ace\css\less\sidebar\responsive-1.less" />
+    <Content Include="Content\Ace\css\less\sidebar\responsive-2.less" />
+    <Content Include="Content\Ace\css\less\sidebar\responsive-3.less" />
+    <Content Include="Content\Ace\css\less\sidebar\shortcuts-toggle.less" />
+    <Content Include="Content\Ace\css\less\sidebar\sidebar-fixed.less" />
+    <Content Include="Content\Ace\css\less\sidebar\sub-arrow.less" />
+    <Content Include="Content\Ace\css\less\skins\empty.less" />
+    <Content Include="Content\Ace\css\less\skins\no-skin.less" />
+    <Content Include="Content\Ace\css\less\skins\skin-1.less" />
+    <Content Include="Content\Ace\css\less\skins\skin-2.less" />
+    <Content Include="Content\Ace\css\less\skins\skin-3.less" />
+    <Content Include="Content\Ace\css\less\skins\skins.less" />
+    <Content Include="Content\Ace\css\less\tab-accordion.less" />
+    <Content Include="Content\Ace\css\less\tables.less" />
+    <Content Include="Content\Ace\css\less\thirdparty-calendar.less" />
+    <Content Include="Content\Ace\css\less\thirdparty-chosen.less" />
+    <Content Include="Content\Ace\css\less\thirdparty-colorbox.less" />
+    <Content Include="Content\Ace\css\less\thirdparty-dataTables.less" />
+    <Content Include="Content\Ace\css\less\thirdparty-date.less" />
+    <Content Include="Content\Ace\css\less\thirdparty-dropzone.less" />
+    <Content Include="Content\Ace\css\less\thirdparty-duallist-multiselect.less" />
+    <Content Include="Content\Ace\css\less\thirdparty-editable.less" />
+    <Content Include="Content\Ace\css\less\thirdparty-fuelux.less" />
+    <Content Include="Content\Ace\css\less\thirdparty-gritter.less" />
+    <Content Include="Content\Ace\css\less\thirdparty-jqgrid.less" />
+    <Content Include="Content\Ace\css\less\thirdparty-jquery-ui.less" />
+    <Content Include="Content\Ace\css\less\thirdparty-nestable.less" />
+    <Content Include="Content\Ace\css\less\thirdparty-raty.less" />
+    <Content Include="Content\Ace\css\less\thirdparty-select2.less" />
+    <Content Include="Content\Ace\css\less\thirdparty-slider.less" />
+    <Content Include="Content\Ace\css\less\thirdparty-typeahead.less" />
+    <Content Include="Content\Ace\css\less\thirdparty-wysiwyg.less" />
+    <Content Include="Content\Ace\css\less\tooltip-popover.less" />
+    <Content Include="Content\Ace\css\less\utility.less" />
+    <Content Include="Content\Ace\css\less\variables.less" />
+    <Content Include="Content\Ace\css\less\widget.less" />
+    <Content Include="Content\Ace\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Ace\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Ace\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Ace\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Ace\fonts\FontAwesome.otf" />
+    <Content Include="Content\Ace\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Ace\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Ace\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Ace\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\Ace\fonts\OpenSans-300.woff" />
+    <Content Include="Content\Ace\fonts\OpenSans-400.woff" />
+    <Content Include="Content\Ace\fonts\readme" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\GoJS\release\go-debug.js" />
+    <Content Include="Scripts\GoJS\release\go.js" />
+    <Content Include="Scripts\GoJS\release\HS1.png" />
+    <Content Include="Scripts\GoJS\release\HS2.png" />
+    <Content Include="Scripts\GoJS\release\HS3.png" />
+    <Content Include="Scripts\GoJS\release\HS4.png" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\JavaScript\Gojs前端圖形化插件.cshtml" />
+    <Content Include="Views\JavaScript\Gojs自定義流程圖.cshtml" />
+    <Content Include="Views\JavaScript\Gojs工業流程圖.cshtml" />
+    <Content Include="Views\Shared\_AceLayout.cshtml" />
+    <Content Include="Views\BootstrapAce\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\GoJS\release\go-debug.d.ts" />
+    <TypeScriptCompile Include="Scripts\GoJS\release\go.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1830</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1830/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此專案參考這部電腦上所缺少的 NuGet 套件。請啟用 NuGet 套件還原，以下載該套件。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
